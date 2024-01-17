@@ -1,10 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 
 export default function Header(props){
-    const title = props.title;
+    const [counter, setCounter] = useState(0);
+
+    function increment(){
+        setCounter(counter + 1);
+    }
+
     return(
-        <header>
-            <h1>{title}</h1>
-        </header>
+        <div>
+            <header>
+                Counter : {counter}
+            </header>
+            <button onClick={increment}>Add</button>
+        </div>
     );
 }
